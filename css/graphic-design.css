@@ -1,0 +1,298 @@
+/* General Reset and Layout */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif; /* A sleek, modern font */
+    line-height: 1.6;
+    background: linear-gradient(135deg, #1E1E1E, #2C2C2C); /* Futuristic dark gradient */
+    color: #fff;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Top Bar (Navigation Bar) */
+.top-bar {
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    padding: 20px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.top-bar nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+}
+
+.top-bar nav ul li {
+    margin: 0 30px;
+}
+
+.top-bar nav ul li a {
+    color: #fff;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: all 0.3s ease;
+}
+
+.top-bar nav ul li a:hover {
+    color: #ff6347;
+    text-shadow: 0 0 15px #ff6347, 0 0 30px #ff6347; /* Glowing neon effect */
+}
+
+/* Service Details Section */
+.service-details {
+    padding: 60px 20px;
+    text-align: center;
+    max-width: 900px;
+    margin: 120px auto; /* Adjusted for top-bar */
+    background-color: rgba(28, 28, 28, 0.85);
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+    transform: translateY(50px);
+    animation: fadeInUp 1.2s ease-out forwards;
+    opacity: 0;
+}
+
+.service-details h1 {
+    font-size: 48px;
+    color: #ff6347; /* Neon accent color */
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    animation: fadeInText 1.5s ease-out forwards;
+}
+
+.service-details img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 30px 0;
+    transition: all 0.3s ease;
+    max-height: 500px; /* Set a max height to prevent image from becoming too large */
+    opacity: 0.9;
+}
+
+.service-details img:hover {
+    opacity: 1;
+    transition: opacity 0.3s ease; /* Smooth hover effect */
+}
+
+.service-details p {
+    font-size: 20px;
+    color: #ccc;
+    line-height: 1.8;
+    margin-top: 20px;
+    opacity: 0;
+    animation: fadeInText 1.5s ease-out forwards;
+    animation-delay: 1s;
+}
+
+/* Animation for Fade In and Up */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInText {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Hover Effect on the Service Image (Smooth Hover Effect) */
+.service-image {
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.service-image:hover {
+    transform: scale(1.05); /* Slight zoom effect */
+    filter: brightness(1.1);
+}
+
+/* Smooth Scroll for Navigation Links */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Adding a Subtle Glow on Hover for Navigation Links */
+.top-bar nav ul li a:hover {
+    text-shadow: 0 0 20px #ff6347, 0 0 30px #ff6347;
+}
+
+/* Responsive Design for Small Screens */
+@media (max-width: 768px) {
+    .service-details h1 {
+        font-size: 36px;
+    }
+
+    .service-details p {
+        font-size: 18px;
+    }
+
+    .service-details img {
+        max-height: 400px; /* Adjust image size for smaller screens */
+    }
+}
+/* Dropdown Menu Styles */
+.top-bar nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 10px 0;
+    position: relative;
+}
+
+.top-bar nav ul li {
+    margin: 0 20px;
+    position: relative; /* For dropdown positioning */
+}
+
+.top-bar nav ul li a {
+    color: #fff;
+    font-size: 18px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.top-bar nav ul li a:hover {
+    color: #ff6347; /* Accent color on hover */
+    transform: scale(1.1); /* Scale up on hover */
+}
+
+/* Dropdown Menu */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none; /* Initially hidden */
+    position: absolute;
+    top: 100%; /* Position it below the parent menu item */
+    left: 0;
+    background-color: #333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 10px 0;
+    z-index: 10;
+    min-width: 150px;
+}
+
+.dropdown-content li {
+    margin: 0;
+    padding: 0;
+}
+
+.dropdown-content li a {
+    color: #fff;
+    font-size: 16px;
+    text-transform: none;
+    padding: 10px 20px;
+    display: block;
+    text-align: left;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-content li a:hover {
+    background-color: #ff6347;
+    color: #fff;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+    display: block; /* Make it visible */
+    animation: slideDown 0.3s ease; /* Smooth dropdown animation */
+}
+
+/* Dropdown Animation */
+@keyframes slideDown {
+    from {
+        transform: translateY(-10px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+/* Side Bar Styles */
+.side-bar {
+    position: fixed;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    background-color: #333;
+    padding: 20px 10px;
+    border-radius: 0 10px 10px 0;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+
+.side-bar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.side-bar ul li {
+    margin: 15px 0;
+}
+
+.side-bar ul li a {
+    text-decoration: none;
+    font-size: 16px;
+    color: #fff;
+    padding: 10px 15px;
+    display: block;
+    text-align: center;
+    transition: background-color 0.3s, transform 0.3s;
+    border-radius: 5px;
+}
+
+.side-bar ul li a:hover {
+    background-color: #ff6347;
+    transform: scale(1.1);
+}
+
+/* Active Link Indicator */
+.side-bar ul li a.active {
+    background-color: #ff6347;
+    font-weight: bold;
+}
+
+/* Responsive Design for Small Screens */
+@media (max-width: 768px) {
+    .side-bar {
+        padding: 10px 5px;
+    }
+
+    .side-bar ul li a {
+        font-size: 14px;
+    }
+}
+html {
+    scroll-behavior: smooth;
+}

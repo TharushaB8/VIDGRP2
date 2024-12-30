@@ -1,0 +1,777 @@
+/* Basic Reset and Layout */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+    background-color: #000; /* Black background for the entire page */
+    color: #fff; /* White text color for contrast */
+}
+
+/* Top Bar (Navigation Bar) */
+.top-bar {
+    background-color: #333;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.top-bar nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 10px 0;
+}
+
+.top-bar nav ul li {
+    margin: 0 20px;
+}
+
+.top-bar nav ul li a {
+    color: #fff;
+    font-size: 18px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.top-bar nav ul li a:hover {
+    color: #ff6347; /* Accent color on hover */
+}
+
+/* Hero Section with Zoom-In Effect */
+.hero {
+    background-image: url('background image.jpg'); /* Replace with your background image */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    position: relative;
+    animation: zoomInEffect 2s forwards;
+}
+
+.hero-content h2 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeIn 1.5s forwards;
+}
+
+.hero-content p {
+    font-size: 24px;
+    margin-bottom: 30px;
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+    animation-delay: 0.5s;
+}
+
+.hero-content .btn {
+    padding: 10px 30px;
+    background-color: #ff6347;
+    color: white;
+    border-radius: 50px;
+    font-size: 18px;
+    transition: background-color 0.3s;
+}
+
+.hero-content .btn:hover {
+    background-color: #ff4500;
+}
+
+/* Hero Zoom-In Effect */
+@keyframes zoomInEffect {
+    0% {
+        transform: scale(1.2);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Fade-In Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* About Section */
+.about {
+    padding: 60px 20px;
+    background-color: #222; /* Dark background for consistency */
+    text-align: center;
+    color: #fff;
+}
+
+.about h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #fff; /* White color for header */
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+}
+
+.about p {
+    font-size: 18px;
+    color: #bbb; /* Lighter color for text */
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+    animation-delay: 0.5s;
+}
+
+/* Fancy Styled Phrases with Neon and Hover Effects */
+.about-phrases h3 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #fff;
+    margin-top: 20px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+    text-shadow: 0 0 10px #ff6347, 0 0 20px #ff6347, 0 0 30px #ff6347; /* Glow effect */
+    transition: text-shadow 0.3s ease-in-out;
+}
+
+/* First phrase with gradient color */
+.about-phrases h3:nth-child(1) {
+    animation-delay: 1s;
+    background: linear-gradient(90deg, rgba(255, 99, 71, 1) 0%, rgba(255, 215, 0, 1) 100%); /* Gradient from red to yellow */
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+/* Second phrase with gradient color */
+.about-phrases h3:nth-child(2) {
+    animation-delay: 1.5s;
+    background: linear-gradient(90deg, rgba(70, 130, 180, 1) 0%, rgba(0, 255, 255, 1) 100%); /* Gradient from steel blue to cyan */
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+/* Hover effect: glowing effect on hover */
+.about-phrases h3:hover {
+    text-shadow: 0 0 30px #ff6347, 0 0 50px #ff6347, 0 0 70px #ff6347;
+}
+
+/* Services Section */
+.services {
+    padding: 60px 20px;
+    background-color: #333;
+    text-align: center;
+}
+
+.services h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: #fff;
+}
+
+.service-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.service-card {
+    width: 300px;
+    background-color: #444;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.service-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.service-card h3 {
+    font-size: 24px;
+    margin: 20px 0;
+    color: #fff;
+}
+
+.service-card p {
+    color: #bbb;
+}
+
+/* Hover Effect */
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.service-card img:hover {
+    transform: scale(1.05);
+}
+
+/* Contact Section */
+.contact {
+    padding: 60px 20px;
+    background-color: #222;
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: #fff;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #555;
+    background-color: #333;
+    color: #fff;
+}
+
+.contact-form button {
+    padding: 12px 30px;
+    background-color: #ff6347;
+    color: white;
+    border-radius: 50px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.contact-form button:hover {
+    background-color: #ff4500;
+    transform: scale(1.05);
+}
+
+.contact-form button:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(255, 99, 71, 0.8);
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+footer .footer-content p {
+    font-size: 16px;
+}
+
+footer .contact-info a {
+    color: #ff6347;
+    text-decoration: none;
+}
+
+/* Service Page Styles */
+
+/* Specific Page Styles (for individual services) */
+.service-page {
+    padding: 60px 20px;
+    background-color: #222; /* Dark background for the service page */
+}
+
+.service-page h2 {
+    font-size: 48px;
+    color: #fff;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* For each service image */
+.service-page .service-image {
+    width: 100%;
+    height: 400px;
+    object-fit: contain; /* Make sure the image fits well without zooming */
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+/* Add a background color or visual elements to enhance the service description */
+.service-page .service-description {
+    max-width: 900px;
+    margin: 0 auto;
+    color: #ccc;
+    font-size: 18px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+/* Special decoration for each page (optional) */
+.service-page .service-title {
+    font-size: 36px;
+    font-weight: bold;
+    color: #ff6347; /* Accent color */
+    margin-bottom: 20px;
+}
+
+.service-page .service-details {
+    font-size: 20px;
+    color: #bbb;
+    line-height: 1.8;
+    margin-bottom: 40px;
+    text-align: justify;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .service-cards {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .service-card {
+        width: 100%;
+    }
+
+    .hero-content h2 {
+        font-size: 36px;
+    }
+
+    .hero-content p {
+        font-size: 20px;
+    }
+
+    .contact-form form {
+        flex-direction: column;
+    }
+}
+/* Graphics Service Page */
+.service-page-graphics {
+    padding: 60px 20px;
+    background-color: #222; /* Dark background for the graphics service page */
+}
+
+.service-page-graphics h2 {
+    font-size: 48px;
+    color: #fff;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* For the service image */
+.service-page-graphics .service-image {
+    width: 100%;
+    height: 400px;
+    object-fit: contain; /* Make sure the image fits well without zooming */
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+/* Graphics Service Description */
+.service-page-graphics .service-description {
+    max-width: 900px;
+    margin: 0 auto;
+    color: #ccc;
+    font-size: 18px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+/* Special decoration for each page */
+.service-page-graphics .service-title {
+    font-size: 36px;
+    font-weight: bold;
+    color: #ff6347; /* Accent color */
+    margin-bottom: 20px;
+}
+
+.service-page-graphics .service-details {
+    font-size: 20px;
+    color: #bbb;
+    line-height: 1.8;
+    margin-bottom: 40px;
+    text-align: justify;
+}
+
+.service-page-graphics .cta-button {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.service-page-graphics .cta-button a {
+    padding: 12px 30px;
+    background-color: #ff6347;
+    color: white;
+    border-radius: 50px;
+    font-size: 18px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.service-page-graphics .cta-button a:hover {
+    background-color: #ff4500;
+}
+/* Graphics Service Page */
+.service-page-graphics {
+    padding: 60px 20px;
+    background-color: #222; /* Dark background for the graphics service page */
+}
+
+.service-page-graphics h2 {
+    font-size: 48px;
+    color: #fff;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* For the service image */
+.service-page-graphics .service-image {
+    width: 100%;
+    height: 400px;
+    object-fit: contain; /* Make sure the image fits well without zooming */
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+/* Graphics Service Description */
+.service-page-graphics .service-description {
+    max-width: 900px;
+    margin: 0 auto;
+    color: #ccc;
+    font-size: 18px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+/* Special decoration for each page */
+.service-page-graphics .service-title {
+    font-size: 36px;
+    font-weight: bold;
+    color: #ff6347; /* Accent color */
+    margin-bottom: 20px;
+}
+
+.service-page-graphics .service-details {
+    font-size: 20px;
+    color: #bbb;
+    line-height: 1.8;
+    margin-bottom: 40px;
+    text-align: justify;
+}
+
+.service-page-graphics .cta-button {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.service-page-graphics .cta-button a {
+    padding: 12px 30px;
+    background-color: #ff6347;
+    color: white;
+    border-radius: 50px;
+    font-size: 18px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.service-page-graphics .cta-button a:hover {
+    background-color: #ff4500;
+}
+/* Ensure the image fits well within its container */
+.service-page .service-image {
+    width: 100%; /* Ensure it uses the full width */
+    height: auto; /* Let the height adjust proportionally */
+    object-fit: contain; /* This ensures the image doesn't get stretched */
+    border-radius: 10px; /* Optional: rounds the corners */
+    margin-bottom: 30px;
+}
+
+/* Optional: Add a container with specific height to avoid overflow */
+.service-page .service-image-container {
+    width: 100%;
+    height: 400px; /* Or any height that fits your design */
+    overflow: hidden; /* Hide overflow if the image is too large */
+    display: flex;
+    justify-content: center; /* Center the image horizontally */
+    align-items: center; /* Center the image vertically */
+}
+/* Ensure no global scaling or transform applies to images on the service pages */
+.service-page .service-image {
+    transform: none !important; /* Disable any unwanted scaling */
+}
+/* Graphic Design Service Page Specific Styles */
+.graphic-design .service-page {
+    background-color: #f4f4f4; /* Light background specific to graphic design */
+}
+
+.graphic-design .service-image-container {
+    width: 80%;
+    height: 400px;
+    margin: 0 auto;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.graphic-design .service-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.graphic-design .service-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.graphic-design .service-description {
+    font-size: 1.2rem;
+    color: #666;
+}
+/* Apply styles to the service-details section */
+.service-details {
+    background-color: #f4f4f4;       /* Light background color */
+    padding: 40px 20px;               /* Padding for spacing inside the section */
+    text-align: center;               /* Center-align the content */
+    border-radius: 10px;              /* Optional: rounded corners for the section */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow effect */
+}
+
+/* Style for the h1 element (Service Title) */
+.service-details h1 {
+    font-size: 2.5rem;                /* Larger font size for the title */
+    color: #333;                      /* Dark gray color for the title */
+    font-weight: bold;                /* Bold font */
+    margin-bottom: 20px;              /* Space below the title */
+}
+
+/* Style for the image inside service-details */
+.service-details .service-image {
+    width: 80%;                       /* Set image width to 80% of its container */
+    height: auto;                     /* Maintain aspect ratio of the image */
+    object-fit: contain;              /* Ensure the image fits the container without distortion */
+    border-radius: 8px;               /* Optional: rounded corners for the image */
+    margin: 0 auto 20px;              /* Center the image and add space below */
+}
+
+/* Style for the paragraph inside service-details */
+.service-details p {
+    font-size: 1.2rem;                /* Set the font size for the paragraph */
+    color: #666;                      /* Light gray text color */
+    line-height: 1.6;                 /* Line height for better readability */
+    max-width: 800px;                 /* Limit the width of the text */
+    margin: 0 auto;                   /* Center the paragraph */
+    padding: 0 20px;                  /* Add padding on left and right sides */
+}
+@media (max-width: 768px) {
+    .service-details {
+        padding: 20px;
+    }
+    .service-details h1 {
+        font-size: 2rem;
+    }
+    .service-details .service-image {
+        width: 100%;
+    }
+    .service-details p {
+        font-size: 1rem;
+        padding: 0 10px;
+    }
+}
+/* Optional: Add transition effects to nav links */
+.top-bar nav ul li a {
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.top-bar nav ul li a:hover {
+    color: #ff6347;
+    transform: scale(1.1);
+}
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('your-image-url.jpg');
+    background-size: cover;
+}
+
+/* Navigation Bar */
+.top-bar {
+    background-color: rgba(0, 0, 0, 0.5); /* 50% transparent background */
+    padding: 6px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    position: relative;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    display: block;
+    padding: 6px;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    background-color: #555;
+}
+
+/* Dropdown Menu */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none; /* Initially hidden */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #333;
+    min-width: 160px;
+    padding: 0;
+    border-radius: 5px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    flex-direction: column;
+}
+
+.dropdown-menu li {
+    width: 100%;
+}
+
+.dropdown-menu li a {
+    padding: 10px 20px;
+    display: block;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #555;
+}
+
+/* Hover Effect for Dropdown */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Transition Effects for Dropdown */
+.dropdown-menu {
+    transition: opacity 0.3s ease;
+}
+
+.dropdown:hover > .dropdown-menu,
+.dropdown-menu:hover {
+    display: block;
+}
+
+nav ul li:hover > a {
+    background-color: #555;
+}
+
+/* Optional: Add transition for smooth hover effect */
+.dropdown-menu {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Content Styling */
+.content {
+    padding: 100px 20px;
+    margin-top: 60px; /* Adjust for fixed navbar */
+    color: white;
+    text-align: center;
+}
+
+.content h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.content p {
+    font-size: 18px;
+}
+
+/* Footer Styling */
+footer {
+    padding: 20px;
+    text-align: center;
+}
+
+.home-button {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    background-color: #333;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.home-button:hover {
+    background-color: #555;
+}
+html {
+    scroll-behavior: smooth;
+}

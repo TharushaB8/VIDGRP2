@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VID GROUP</title>
+    <link rel="icon" href="../img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="top-bar">
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <!-- Dropdown for Services -->
+                <li class="dropdown">
+                    <a href="../pages/services.html">Services</a> <!-- Link directly to the service.html page -->
+                    <ul class="dropdown-menu">
+                        <li><a href="pages/graphic-design.html">Graphic-Design</a></li>
+                        <li><a href="pages/videography.html">Videography</a></li>
+                        <li><a href="pages/special-events.html">Special-Events</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <script src="js/js/js/snowstorm.js"></script>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home" style="background-image: url('img/background image.jpg');">
+        <div class="hero-content fade-in">
+            <h2>Welcome to VID GROUP</h2>
+            <p>Where Creativity Meets Technology</p>
+            <a href="#services" class="btn">Explore Our Services!</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="about-content">
+            <h2>About VID GROUP</h2>
+            <p>
+                VID GROUP is a creative agency focused on delivering high-end photography, video production, and graphic design services.
+                We believe in transforming ideas into reality, and we work closely with each client to ensure their vision is brought to life. 
+                Our team of experts uses the latest technology and creative techniques to deliver outstanding results.
+            </p>
+            
+            <!-- Added fancy styled phrases with a bold, unexpected design -->
+            <div class="about-phrases">
+                <h3>The Quality You Expect</h3>
+                <h3>The Service You Need</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section (Functional with Links) -->
+    <section class="services" id="services">
+        <h2>Our Services</h2>
+        <div class="service-cards">
+            <!-- Link to Web Development Service -->
+            <div class="service-card">
+                <a href="pages/web-development.html">
+                    <img src="img/graphic.jpg" alt="Web Development">
+                    <h3>Graphic-Design</h3>
+                    <p>Our Graphic Design service brings your ideas to life with visually stunning and creative designs. From logos and
+                         branding to digital and print materials, we ensure every detail aligns with your vision and communicates your message effectively.</p>
+                </a>
+            </div>
+
+            <!-- Link to App Development Service -->
+            <div class="service-card">
+                <a href="pages/app-development.html">
+                    <img src="img/wedding event.jpg" alt="App Development">
+                    <h3>Special-Events</h3>
+                    <p>Make your special occasions unforgettable with our dedicated Special Events service. From meticulous planning to flawless execution, 
+                        we create experiences that you and your guests will cherish forever.</p>
+                </a>
+            </div>
+
+            <!-- Link to Design Service -->
+            <div class="service-card">
+                <a href="pages/design.html">
+                    <img src="img/video.jpg" alt="Design">
+                    <h3>Videography</h3>
+                    <p>Capture your moments with our professional Videography service. Whether it's promotional videos, event coverage, or creative storytelling,
+                         our team delivers high-quality videos that leave a lasting impression.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <div class="contact-form">
+            <form action="#" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required placeholder="Your Name">
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required placeholder="Your Email">
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required placeholder="Your Message"></textarea>
+
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 VID GROUP. All rights reserved.</p>
+        </div>
+        <div class="contact-info">
+            <p>Email: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
+            <p>Phone: <a href="tel:+1234567890">+1 (234) 567-890</a></p>
+        </div>
+        <!-- Back to Top Button -->
+        <div class="back-to-top">
+            <a href="#home" class="home-button">Back to Top</a>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
